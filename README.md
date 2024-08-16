@@ -14,7 +14,7 @@ Also make sure that you have Node.js 14 or newer in order to use it.
 
 ### Usage/Examples
 
-```js app.js
+```js file=app.js
 const { validator } = require('enpressjs-validator')
 const express = require('express')
 const app = express()
