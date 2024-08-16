@@ -42,7 +42,7 @@ app.listen(3000, () => {
 
 ## Authors
 
-- [@octokatherine](https://www.github.com/bigraja)
+- [@bigraja](https://www.github.com/bigraja)
 
 ## License
 
