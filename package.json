@@ -1,0 +1,24 @@
+{
+  "name": "expressjs-validator",
+  "version": "1.0.0",
+  "description": "expressjs server body, query, cookie validator",
+  "main": "index.js",
+  "keywords": [
+    "express",
+    "expressjs",
+    "validator",
+    "validation",
+    "validate",
+    "sanitize",
+    "sanitization",
+    "xss"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raja Khan",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.19.2"
+  }
+}
