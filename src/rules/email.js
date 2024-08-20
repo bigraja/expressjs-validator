@@ -9,7 +9,7 @@ function email() {
     if (emailRegex.test(inputData)) validation = true;
 
     return {
-        validation: false,
+        validation,
         validatedData: inputData,
         errorMessage,
     };

@@ -12,7 +12,7 @@ function boolean() {
         inputData === "0") validation = true;
 
     return {
-        validation: false,
+        validation,
         validatedData: inputData,
         errorMessage,
     };

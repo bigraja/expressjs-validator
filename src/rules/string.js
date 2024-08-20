@@ -7,7 +7,7 @@ function string() {
     if ((typeof str === "string" && str.trim().length === 0) || str === null || /^\d+$/.test(inputData)) validation = false;
 
     return {
-        validation: false,
+        validation,
         validatedData: inputData,
         errorMessage,
     };

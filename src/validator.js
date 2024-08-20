@@ -1,11 +1,13 @@
 const booleanF = require('./rules/boolean.js');
 const email = require('./rules/email.js');
 const string = require('./rules/string.js');
+const digits = require('./rules/digits.js');
 
 const allRules = {
     "email": email,
     "email": string,
     "boolean": booleanF,
+    "digits": digits,
 };
 
 /**
@@ -27,7 +29,7 @@ function validator(inputsData = {}, inputsRules = {}, customMessages = {}) {
 
             validationRules.forEach(ruleString => {
 
-                const { ruleFunction, ruleFunctionArg } = getRuleFunction(allRules[ruleString]);
+                const { ruleFunction, ruleFunctionArg } = getRuleFunction(ruleString);
                 const inputData = inputsData[inputName];
 
                 const { validation, errorMessage, validatedData } = callRuleFunction(ruleFunction, ruleFunctionArg, inputName, inputData);
@@ -55,7 +57,7 @@ function validator(inputsData = {}, inputsRules = {}, customMessages = {}) {
     }
 
     return {
-        validation: (Object.keys(errorMessages).length) ? true : false,
+        validation: (Object.keys(errorMessages).length) ? false : true,
         validated: validateData,
         errorMessages: errorMessages
     };
@@ -86,10 +88,16 @@ function callRuleFunction(ruleFunction, ruleFunctionArg, inputName, inputData) {
     return { validation, errorMessage, validatedData };
 }
 
-function getRuleFunction(ruleFunctionString) {
-
-    let ruleFunction = ruleFunctionString;
+function getRuleFunction(ruleFunctionArgString) {
+    let ruleFunction = allRules[ruleFunctionArgString];
     let ruleFunctionArg = [];
+
+    if (ruleFunctionArgString.search(":")) {
+        let functionArgString, functionString;
+        [functionString, functionArgString] = ruleFunctionArgString.split(":");
+        ruleFunction = allRules[functionString];
+        ruleFunctionArg = functionArgString.split(",");
+    }
 
     return { ruleFunction, ruleFunctionArg };
 }

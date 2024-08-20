@@ -64,7 +64,7 @@ function customRule() {
 module.exports = customRule;
 ```
 
-User this custom rule like this
+Use this custom rule like this
 
 ```js file=app.js
 const { validator, useRule } = require('enpressjs-validator')
