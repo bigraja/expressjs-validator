@@ -2,12 +2,14 @@ const booleanF = require('./rules/boolean.js');
 const email = require('./rules/email.js');
 const string = require('./rules/string.js');
 const digits = require('./rules/digits.js');
+const required = require('./rules/required.js');
 
 const allRules = {
     "email": email,
     "email": string,
     "boolean": booleanF,
     "digits": digits,
+    "required": required,
 };
 
 /**

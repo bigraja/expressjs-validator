@@ -24,8 +24,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
     const { validation, errorMessages, validationData } = validator(req.boy, {
-        "name": ["string"],
-        "email": ["string", "email"]
+        "name": ["required", "string"],
+        "email": ["string", "email"] // required, string and email are validations rule
     });
 
     if (validation) {
@@ -40,9 +40,19 @@ app.listen(3000, () => {
 })
 ```
 
+### All Rule List
+
+| Rule | Description |
+| --- | --- |
+| `string` | The field under validation must be a string. |
+| `boolean` | The field under validation must be able to be cast as a boolean. Accepted input are true, false, 1, 0, "1", and "0". |
+| `digits:value` | The integer under validation must have an exact length of value. |
+| `email` | The field under validation must be formatted as an email address. |
+| `required` | The field under validation must be present in the input data and not empty. |
+
 ### Make Custom Rule
 
-Make file like this 'customRule.js'
+Make file like this `customRule.js`
 
 ```js file=customRule.js
 function customRule() {

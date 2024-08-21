@@ -4,7 +4,7 @@ function digits(digitLength) {
     let validation = false;
     let errorMessage = `The ${inputName} must be ${digitLength} digit.`;
 
-   if (Number(inputData) && Number(inputData).toString().length == digitLength) validation = true;
+    if (Number(inputData) && Number.parseInt(inputData).toString().length == digitLength) validation = true;
 
     return {
         validation,
