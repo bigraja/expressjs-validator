@@ -1,6 +1,6 @@
 {
   "name": "expressjs-validator",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "expressjs server body, query, cookie validator",
   "main": "index.js",
   "keywords": [
@@ -13,6 +13,12 @@
     "sanitization",
     "xss"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bigraja/expressjs-validator.git",
+    "directory": "/"
+  },
+  "bugs": "https://github.com/bigraja/expressjs-validator/issues",
   "scripts": {
     "test": "jest"
   },
